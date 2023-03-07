@@ -27,7 +27,8 @@ class UpdateProjectRequest extends FormRequest
             'title' => ['required', 'unique:projects', 'max:100'],
             'content' => ['nullable'],
             'slug' => ['required', 'max:100'],
-            'image' => ['required' , 'max:400']
+            'image' => ['required' , 'max:400'],
+            'type_id' => ['nullable', 'exists:types,id']
         ];
     }
 
@@ -40,6 +41,7 @@ class UpdateProjectRequest extends FormRequest
             'slug.max' => 'Lo slug può avere massimo 100 caratteri!',
             'image.required' => 'Immagine obbligatoria!',
             'image.max' => 'Il link immagine può avere massimo 400 caratteri!',
+            'type_id ' => 'Tipologia non valida'
             
         ];
     }

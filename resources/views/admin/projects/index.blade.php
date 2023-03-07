@@ -13,6 +13,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$project->title}}</h5>
                             <p class="card-text">{{$project->content}}</p>
+                            <p class="card-text">  @if ($project->type_id)
+                               Tipologia: {{$project->type->name}}
+                              @else
+                                Tipologia non disponibile
+                              @endif</p>
                             <p class="card-text my-4"><small class="text-muted">Last updated 3 mins ago</small></p>
                             <a href="{{route('admin.projects.edit', ['project' =>$project->slug])}}" class="btn btn-md btn-square btn-warning">
                                 <i class="fa-solid fa-pen"></i>
