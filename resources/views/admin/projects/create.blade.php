@@ -41,6 +41,18 @@
                 @error('slug')
                 <div class="text-danger">{{$message}}</div>
                 @enderror
+                
+                <div class="form-group my-3">
+                    <label class="control-label">Tipologia: </label>
+                    <select class="form-control" name="type_id" id="type_id">
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                @error('type_id')
+                <div class="text-danger">{{$message}}</div>
+                @enderror
                 <div class="mb-3 form-group">
                     <label for="image" class="control-label">Url immagine: </label>
                     <input type="text" class="form-control" id="image" name="image" placeholder="Inserisci l'Url dell'immagine">
