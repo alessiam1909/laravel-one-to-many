@@ -11,6 +11,8 @@
                 <div class="content-show text-center">
                   <div class="title-show">{{$project->slug}}</div>
                   <p class="">{{$project->content}}</p>
+                  <h5>Tipologia:</h5>
+                  <p>{{ $project->type ?  $project->type->name : 'Senza tipologia'}}</p>
                   <div class="contents-show">
                       <a href="{{route('admin.projects.edit', ['project' =>$project->slug])}}" class="btn btn-sm btn-square btn-warning">
                           <i class="fa-solid fa-pen"></i>
